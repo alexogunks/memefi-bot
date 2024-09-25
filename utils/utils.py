@@ -8,6 +8,7 @@ from urllib.parse import unquote
 from utils.headers import headers_set
 from utils.helpers import log,mrh,hju,kng,pth,bru,htm, reset, generate_random_nonce, _number, read_config
 from utils.queries import QUERY_BOOSTER, QUERY_GAME_CONFIG, QUERY_USER, QUERY_NEXT_BOSS, MUTATION_GAME_PROCESS_TAPS_BATCH, QUERY_COMBO
+import sys
         
 config = read_config()
 proxy_file = ('proxy.txt')
@@ -200,8 +201,8 @@ def activate_booster(index, headers):
         set_next_boss(index, headers)
         return
 
-    min_damage = config.get('min_damage', 1000) 
-    max_damage = config.get('max_damage', 10000)
+    min_damage = config.get('min_damage', 10000) 
+    max_damage = config.get('max_damage', 100000)
     damage = config.get('crazy_damage', False)
     
     if damage == True:
@@ -235,6 +236,10 @@ def activate_booster(index, headers):
         tap_data = tap_result['data']['telegramGameProcessTapsBatch']
         boss_level = tap_data['currentBoss']['level']
         balance = tap_data['coinsAmount']
+        if balance >= 1500000000 and boss_level == 20:
+            log(mrh + f"Error: {kng}Balance is over {mrh}1.5B,{kng} booster off ")
+            sys.exit()
+                     
         log(kng + f"Fighting {hju}with the boss on {pth}level {boss_level}")
         if bos_health == 0 :
             set_next_boss(index, headers)

@@ -109,7 +109,7 @@ def main():
                         log(kng + "Insufficient energy to continue, exiting loop.")
                         break
 
-                    if level_bos == 13 and bos_health == 0:
+                    if level_bos == 20 and bos_health == 0:
                         log(kng + f"{hju}waiting {kng}dev add boss level {pth}{user_data['currentBoss']['level'] + 1}")
                         break
 

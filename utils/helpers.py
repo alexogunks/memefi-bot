@@ -51,17 +51,15 @@ def read_config():
 
 def print_banner():
     banner = r"""
- ██╗████████╗███████╗     ██╗ █████╗ ██╗    ██╗
- ██║╚══██╔══╝██╔════╝     ██║██╔══██╗██║    ██║
- ██║   ██║   ███████╗     ██║███████║██║ █╗ ██║
- ██║   ██║   ╚════██║██   ██║██╔══██║██║███╗██║
- ██║   ██║   ███████║╚█████╔╝██║  ██║╚███╔███╔╝
- ╚═╝   ╚═╝   ╚══════╝ ╚════╝ ╚═╝  ╚═╝ ╚══╝╚══╝  """ 
+  █████╗   ██████╗ 
+ ██╔══██╗ ██╔═══██╗
+ ███████║ ██║   ██║
+ ██╔══██║ ██║   ██║
+ ██║  ██║ ╚██████╔╝
+ ╚═╝  ╚═╝  ╚═════╝  """ 
     print(hju + banner + reset)
-    print(hju + " Recode Memefi Auto Bot")
-    print(mrh + f" NOT FOR SALE = Free to use")
-    print(mrh + f" original by {pth}adearmanwijaya")
-    print(mrh + f" before start please '{hju}git pull{mrh}' to update bot\n")
+    print(hju + " Memefi Booster")
+    print(mrh + f" for {pth}alexogunks")
     print(pth + f"~" * 62)
 
 def generate_random_nonce(length=52):
